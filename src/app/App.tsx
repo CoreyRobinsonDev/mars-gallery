@@ -13,23 +13,31 @@ const api = typeof process.env.REACT_APP_API_KEY === 'string'
 const App: React.FC = () => {
   const [photos, setPhotos] = useState<PhotoResponseData | undefined>(undefined);
   const [manifest, setManifest] = useState<ManifestResponseData | undefined>(undefined);
+  const [rover, setRover] = useState<string>('Curiosity');
+  const [sol, setSol] = useState<string>('1')
 
   const fetchPhotos = async () => {
-    const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${api}`);
+    const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.toLowerCase()}/photos?sol=${sol}&api_key=${api}`);
     const data: PhotoResponseData = await response.json();
     setPhotos(data);
   }
   const fetchManifest = async () => {
-    const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/manifests/Curiosity?api_key=${api}`);
+    const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${api}`);
     const data: ManifestResponseData = await response.json();
     setManifest(data);
+  }
+
+  const handleClick = (newValue: string) => {
+    setRover(newValue);  
+  }
+  const handleChange = (newValue: string) => {
+    setSol(newValue);
   }
 
   useEffect(() => {
     fetchPhotos();
     fetchManifest();
-  }, [])
-
+  }, [rover, sol])
   return (
     <>
       <Global styles={css`
@@ -43,6 +51,9 @@ const App: React.FC = () => {
             box-sizing: inherit;  
             margin: 0;  
             padding: 0;
+        }
+        :root {
+          --text-color: #A9CEC2;
         }
         button {
           background: none;
@@ -59,7 +70,7 @@ const App: React.FC = () => {
         }
       `} />
       <main>
-        <Header />
+        <Header handleClick={handleClick} />
       {manifest
         ? <RoverInfo 
         landing_date={manifest?.photo_manifest.landing_date}
@@ -69,11 +80,12 @@ const App: React.FC = () => {
         name={manifest?.photo_manifest.name}
         status={manifest?.photo_manifest.status}
         total_photos={manifest?.photo_manifest.total_photos}
+        rover={rover}    
         />
         : 'Loading...'
       }
       {photos
-        ? <RoverImages photos={photos.photos.map(photo => photo.img_src)} />
+        ? <RoverImages photos={photos?.photos.map(photo => photo.img_src)} handleChange={handleChange} value={sol} />
         : 'Loading...'
       }    
       </main>
