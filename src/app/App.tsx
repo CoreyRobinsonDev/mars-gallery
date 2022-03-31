@@ -57,7 +57,7 @@ const App: React.FC = () => {
             padding: 0;
         }
         :root {
-          --text-color: #A9CEC2;
+          --text-color: #6DA79B;
         }
         button {
           background: none;
@@ -70,7 +70,7 @@ const App: React.FC = () => {
           outline: inherit;
         }
         body {
-          background: #47494e;
+          background: #585A65;
         }
       `} />
       <main>

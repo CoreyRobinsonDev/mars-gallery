@@ -47,7 +47,7 @@ const RoverImages: React.FC<Props> = ({ photos, handleChange, value }) => {
   return <article>
     <Header>
       <H3>Retrieve photos on a given Martian Day: </H3>
-      <Input value={value} onChange={(e) => handleChange((e.target as HTMLInputElement).value)} />
+      <Input type='input' value={value} onChange={(e) => handleChange((e.target as HTMLInputElement).value)} />
     </Header>
     <Wrapper>
     {photos.map((photo, key) => <Image key={key} src={photo} alt=''/>)}
