@@ -21,6 +21,10 @@ const Image = styled.img`
   height: 100%;
   border-radius: 5px;
   margin-right: 1rem;
+
+  @media only screen and (max-width: 650px) {
+    display: none;
+  }
 `
 const BioWrapper = styled.div`
   color: var(--text-color);

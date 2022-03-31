@@ -16,20 +16,32 @@ const Wrapper = styled.div`
 const Image = styled.img`
   width: 500px;
   height: 100%;
+
+  
 `
 const Header = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 `
 const H3 = styled.h3`
   font-size: 2rem;
+  
+  @media only screen and (max-width: 650px) {
+    font-size: 1.8rem;
+  }
 `
 const Input = styled.input`
-  width: 2.1rem;
+  width: 3.3rem;
   text-align: right;
   color: var(--text-color);
   background: #47494e;
+  font-size: 1.3rem;
+  
+  &:focus {
+    outline: none;
+  }
 `
 const RoverImages: React.FC<Props> = ({ photos, handleChange, value }) => {
   return <article>

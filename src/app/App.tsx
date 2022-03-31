@@ -38,6 +38,10 @@ const App: React.FC = () => {
     fetchPhotos();
     fetchManifest();
   }, [rover, sol])
+  
+  useEffect(() => {
+    fetchPhotos();
+  }, [sol])
   return (
     <>
       <Global styles={css`
