@@ -39,15 +39,20 @@ const Button = styled.button`
   }
 `
 const Anchor = styled.a`
+  display: none;
   position: fixed;
   text-decoration: none;
-  top: 105vh;
-  left: 65vw;
+  top: 92vh;
+  right: 1rem;
   color: var(--text-color);
   background: #2e2e2e;
   padding: 10px;
   border-radius: 15px;
   z-index: 2;
+
+  @media only screen and (max-width: 650px) {
+    display: block;
+  }
 `
 
 const Header: React.FC<Props> = ({ handleClick }) => {

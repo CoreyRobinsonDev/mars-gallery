@@ -1,6 +1,6 @@
 # Mars Photo Gallery
 
-A simple web app for searching photos taken on mars using NASA's Mars Rover Photos api.
+A simple web app for searching photos taken on Mars using NASA's Mars Rover Photos api.
 
 **Live Preview**: https://mars-gallery.netlify.app/
 

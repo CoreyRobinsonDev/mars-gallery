@@ -21,6 +21,7 @@ const Image = styled.img`
   height: 100%;
   border-radius: 5px;
   margin-right: 1rem;
+  box-shadow: 0 10px 15px 3px rgba(0,0,0,0.1),0 4px 6px 2px rgba(0,0,0,0.05);
 
   @media only screen and (max-width: 650px) {
     display: none;
@@ -31,6 +32,7 @@ const BioWrapper = styled.div`
   background: #2e2e2e;
   padding: 10px;
   border-radius: 10px;
+  box-shadow: 0 10px 15px 3px rgba(0,0,0,0.1),0 4px 6px 2px rgba(0,0,0,0.05);
 `
 const InfoWrapper = styled.div`
   display: flex;

@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const [photos, setPhotos] = useState<PhotoResponseData | undefined>(undefined);
   const [manifest, setManifest] = useState<ManifestResponseData | undefined>(undefined);
   const [rover, setRover] = useState<string>('Curiosity');
-  const [sol, setSol] = useState<string>('1')
+  const [sol, setSol] = useState<string>('1');
 
   const fetchPhotos = async () => {
     const response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover.toLowerCase()}/photos?sol=${sol}&api_key=${api}`);
@@ -42,6 +42,7 @@ const App: React.FC = () => {
   useEffect(() => {
     fetchPhotos();
   }, [sol])
+
   return (
     <>
       <Global styles={css`
@@ -74,7 +75,7 @@ const App: React.FC = () => {
         }
       `} />
       <main>
-        <Header handleClick={handleClick} />
+        <Header handleClick={handleClick}/>
       {manifest
         ? <RoverInfo 
         landing_date={manifest?.photo_manifest.landing_date}
