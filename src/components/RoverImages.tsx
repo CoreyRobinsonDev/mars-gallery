@@ -61,6 +61,7 @@ const Input = styled.input`
   }
 `
 const RoverImages: React.FC<Props> = ({ photos, handleChange, value }) => {
+  
   return <Wrapper>
     <Header>
       <H3>Retrieve photos on a given Martian Day: </H3>
