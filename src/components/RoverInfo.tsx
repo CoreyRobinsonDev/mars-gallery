@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import {motion} from 'framer-motion';
 
 interface Props {
   landing_date: string;
@@ -83,16 +84,20 @@ const RoverInfo: React.FC<Props> = ({ landing_date, launch_date, max_date, max_s
     bio = roverBio.Spirit.bio;
   }
   return <Wrappper>
-    {img}
+    <motion.div initial={{opacity:0}} animate={{opacity:1}}>
+      {img}
+    </motion.div>
     <BioWrapper>
-      <H1>{name}</H1>
-      {bio}
-      <InfoWrapper><H2>Launch Date: </H2><span>{launch_date}</span></InfoWrapper>
-      <InfoWrapper><H2>Landing Date: </H2><span>{landing_date}</span></InfoWrapper>
-      <InfoWrapper><H2>Last Photo Taken On (Martian sol): </H2><span>{max_sol}</span></InfoWrapper>
-      <InfoWrapper><H2>Last Photo Taken On (Earth date): </H2><span>{max_date}</span></InfoWrapper>
-      <InfoWrapper><H2>Total Photos Taken: </H2><span>{new Intl.NumberFormat().format(total_photos)}</span></InfoWrapper>
-      <InfoWrapper><H2>Status: </H2><span>{status}</span></InfoWrapper>
+      <motion.div animate={{opacity: 1, scale: 1}} initial={{opacity: 0, scale: 0}}>
+        <H1>{name}</H1>
+        {bio}
+        <InfoWrapper><H2>Launch Date: </H2><span>{launch_date}</span></InfoWrapper>
+        <InfoWrapper><H2>Landing Date: </H2><span>{landing_date}</span></InfoWrapper>
+        <InfoWrapper><H2>Last Photo Taken On (Martian sol): </H2><span>{max_sol}</span></InfoWrapper>
+        <InfoWrapper><H2>Last Photo Taken On (Earth date): </H2><span>{max_date}</span></InfoWrapper>
+        <InfoWrapper><H2>Total Photos Taken: </H2><span>{new Intl.NumberFormat().format(total_photos)}</span></InfoWrapper>
+        <InfoWrapper><H2>Status: </H2><span>{status}</span></InfoWrapper>
+      </motion.div>
     </BioWrapper>
   </Wrappper>
 }

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 
 interface Props {
   photos: string[];
@@ -66,7 +67,8 @@ const RoverImages: React.FC<Props> = ({ photos, handleChange, value }) => {
       <Input type='input' value={value} onChange={(e) => handleChange((e.target as HTMLInputElement).value)} />
     </Header>
     <PhotoWrapper>
-    {photos.map((photo, key) => <Image key={key} src={photo} alt=''/>)}
+      {photos.map((photo, key) => <motion.div initial="hidden" whileInView="visible" viewport={{once: true}} whileTap={{ zIndex:2, scale: 2}}>
+<Image key={key} src={photo} alt='' /></motion.div>)}
     </PhotoWrapper>
   </Wrapper>
 }
