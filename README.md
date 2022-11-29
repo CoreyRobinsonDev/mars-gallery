@@ -2,7 +2,7 @@
 
 A simple web app for searching photos taken on Mars using NASA's Mars Rover Photos api.
 
-**Live Preview**: https://mars-gallery.netlify.app/
+**Live Preview**: https://mars-gallery-crd.netlify.app/
 
 ## Built with
 [<img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />](#)
