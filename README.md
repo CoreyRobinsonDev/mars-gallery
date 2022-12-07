@@ -11,4 +11,4 @@ A simple web app for searching photos taken on Mars using NASA's Mars Rover Phot
 <br/>
 ## Features
 - Users can select a retrieve mission info on a given rover. 
-- Users cab select photos based on the martian day they were taken.
+- Users can select photos based on the martian day they were taken.
