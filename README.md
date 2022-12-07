@@ -10,5 +10,5 @@ A simple web app for searching photos taken on Mars using NASA's Mars Rover Phot
 [<img align="left" alt="Emotion" width="26px" src="https://raw.githubusercontent.com/emotion-js/emotion/main/emotion.png" />](#)
 <br/>
 ## Features
-- Users can select a retrieve mission info on a given rover. 
+- Users can select and retrieve mission info on a given rover. 
 - Users can select photos based on the martian day they were taken.
